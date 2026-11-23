@@ -1,53 +1,46 @@
 <svg width="1200" height="40" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .typing-text { 
-        font-family: 'Courier New', monospace; 
-        font-size: 20px; 
-        fill: #00ffff;
-      }
-      .cursor-blink {
-        animation: blink 1s infinite;
-      }
-      @keyframes blink {
-        0%, 49% { opacity: 1; }
-        50%, 100% { opacity: 0; }
+      .typing-cmd { 
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, Monaco, 'Courier New', monospace;
+        font-size: 16px;
       }
     </style>
   </defs>
   
-  <!-- Phase 1: Building AI agent infrastructure -->
-  <text x="20" y="28" class="typing-text" opacity="0">
-    Building AI agent infrastructure at Huge AI
-    <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;0.02;0.23;0.25;0.27" dur="20s" repeatCount="indefinite"/>
+  <rect width="1200" height="40" fill="#0a0a0a"/>
+  
+  <!-- Prompt -->
+  <text x="10" y="25" class="typing-cmd">
+    <tspan fill="#8a939e">$</tspan>
   </text>
   
-  <!-- Phase 2: Producing deep house -->
-  <text x="20" y="28" class="typing-text" opacity="0">
-    Producing deep house &amp; disco as ZYLR
-    <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.27;0.29;0.48;0.50;0.52" dur="20s" repeatCount="indefinite"/>
+  <!-- Phase 1: Building agents -->
+  <text x="25" y="25" class="typing-cmd" fill="#f5a524" opacity="0">
+    ./build --agents huge-ai
+    <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;0.02;0.30;0.33;0.35" dur="15s" repeatCount="indefinite"/>
   </text>
   
-  <!-- Phase 3: Digitizing materials -->
-  <text x="20" y="28" class="typing-text" opacity="0">
-    Digitizing thousands of design material samples
-    <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.52;0.54;0.73;0.75;0.77" dur="20s" repeatCount="indefinite"/>
+  <!-- Phase 2: Scanning materials -->
+  <text x="25" y="25" class="typing-cmd" fill="#f5a524" opacity="0">
+    scan ./material-samples --ml-vision
+    <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.35;0.37;0.63;0.66;0.68" dur="15s" repeatCount="indefinite"/>
   </text>
   
-  <!-- Phase 4: Built gatewayd -->
-  <text x="20" y="28" class="typing-text" opacity="0">
-    Built gatewayd at Ripple
-    <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.77;0.79;0.98;1;1" dur="20s" repeatCount="indefinite"/>
+  <!-- Phase 3: Git log -->
+  <text x="25" y="25" class="typing-cmd" fill="#f5a524" opacity="0">
+    git log --since=2014 ripple/gatewayd
+    <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.68;0.70;0.98;1;1" dur="15s" repeatCount="indefinite"/>
   </text>
   
   <!-- Blinking cursor -->
-  <text x="22" y="28" class="typing-text" opacity="0.8">
-    <tspan dx="0">▌</tspan>
-    <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.02;0.98;1" dur="20s" repeatCount="indefinite"/>
+  <text x="27" y="25" class="typing-cmd" opacity="0.9">
+    <tspan fill="#ff8a00">█</tspan>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.02;0.98;1" dur="15s" repeatCount="indefinite"/>
     <animate attributeName="x" 
-      values="22;340;22;270;22;370;22;190;22" 
-      keyTimes="0;0.25;0.27;0.50;0.52;0.75;0.77;0.98;1" 
-      dur="20s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0" dur="1s" repeatCount="indefinite"/>
+      values="27;215;27;295;27;295;27" 
+      keyTimes="0;0.33;0.35;0.66;0.68;0.98;1" 
+      dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;0" dur="1s" repeatCount="indefinite"/>
   </text>
 </svg>

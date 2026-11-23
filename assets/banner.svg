@@ -1,43 +1,32 @@
 <svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a0033;stop-opacity:1">
-        <animate attributeName="stop-color" values="#1a0033;#2d0052;#1a0033" dur="8s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:#4a0080;stop-opacity:1">
-        <animate attributeName="stop-color" values="#4a0080;#6600cc;#4a0080" dur="8s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#0d001a;stop-opacity:1">
-        <animate attributeName="stop-color" values="#0d001a;#1a0033;#0d001a" dur="8s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      .terminal-text { 
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, Monaco, 'Courier New', monospace;
+        font-size: 16px;
+      }
+      .terminal-title { 
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, Monaco, 'Courier New', monospace;
+        font-size: 72px;
+        font-weight: 700;
+      }
+      .cursor-blink {
+        animation: blink 1.2s infinite;
+      }
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+    </style>
     
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1">
-        <animate attributeName="stop-color" values="#ff00ff;#00ffff;#ff00ff" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:1">
-        <animate attributeName="stop-color" values="#00ffff;#ff00ff;#00ffff" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1">
-        <animate attributeName="stop-color" values="#ff00ff;#00ffff;#ff00ff" dur="4s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-    
-    <radialGradient id="mirrorBallGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"/>
-      <stop offset="30%" style="stop-color:#ff00ff;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#4a0080;stop-opacity:0"/>
-    </radialGradient>
-    
-    <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:0.6"/>
-      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:0"/>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff8a00;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#f5a524;stop-opacity:1"/>
     </linearGradient>
     
     <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -45,196 +34,88 @@
     </filter>
   </defs>
   
-  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+  <!-- Terminal background -->
+  <rect width="1200" height="300" fill="#0a0a0a"/>
   
-  <!-- Mirror ball -->
-  <g opacity="0.7">
-    <circle cx="150" cy="80" r="30" fill="url(#mirrorBallGrad)" filter="url(#glow)">
-      <animateTransform attributeName="transform" type="rotate" from="0 150 80" to="360 150 80" dur="10s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Facets on the mirror ball -->
-    <circle cx="140" cy="70" r="4" fill="#ffffff" opacity="0.9">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="160" cy="75" r="3" fill="#ffffff" opacity="0.8">
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="145" cy="90" r="3" fill="#ffffff" opacity="0.7">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="0.6s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <!-- Terminal window frame -->
+  <rect x="20" y="20" width="1160" height="260" rx="8" fill="#111418" stroke="#2b3038" stroke-width="2"/>
   
-  <!-- Circuit lines routed around title area -->
-  <g opacity="0.3" stroke="#00ffff" stroke-width="1" fill="none">
-    <!-- Left side circuits -->
-    <path d="M 0,150 L 150,150 L 150,50">
-      <animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
-    </path>
-    <path d="M 150,50 L 250,50">
-      <animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" begin="0.3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="0.3s" repeatCount="indefinite"/>
-    </path>
-    <!-- Right side circuits -->
-    <path d="M 950,50 L 1050,50 L 1050,150 L 1200,150">
-      <animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" begin="0.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="0.6s" repeatCount="indefinite"/>
-    </path>
-    <path d="M 200,250 L 350,250">
-      <animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" begin="0.9s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="0.9s" repeatCount="indefinite"/>
-    </path>
-    <path d="M 850,250 L 1000,250">
-      <animate attributeName="stroke-dasharray" values="0,500;500,0" dur="3s" begin="1.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="1.2s" repeatCount="indefinite"/>
-    </path>
-    <!-- Circuit nodes -->
-    <circle cx="150" cy="150" r="3" fill="#00ffff">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="250" cy="50" r="3" fill="#00ffff">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1050" cy="150" r="3" fill="#00ffff">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.6s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <!-- Title bar -->
+  <rect x="20" y="20" width="1160" height="35" rx="8" fill="#1f2329"/>
+  <rect x="20" y="38" width="1160" height="17" fill="#1f2329"/>
   
-  <!-- Full-width equalizer bars -->
-  <g opacity="0.5">
-    <rect x="50" y="260" width="12" height="40" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="40;15;80;30;40" dur="0.8s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="260;285;220;270;260" dur="0.8s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="100" y="240" width="12" height="60" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="60;30;100;45;60" dur="0.9s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="240;270;200;255;240" dur="0.9s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="150" y="250" width="12" height="50" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="50;20;90;35;50" dur="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="250;280;210;265;250" dur="0.7s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="200" y="230" width="12" height="70" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="70;40;110;55;70" dur="1.0s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="230;260;190;245;230" dur="1.0s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="250" y="255" width="12" height="45" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="45;15;85;30;45" dur="0.85s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="255;285;215;270;255" dur="0.85s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="300" y="245" width="12" height="55" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="55;25;95;40;55" dur="0.75s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="245;275;205;260;245" dur="0.75s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="350" y="235" width="12" height="65" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="65;35;105;50;65" dur="0.95s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="235;265;195;250;235" dur="0.95s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="400" y="250" width="12" height="50" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="50;20;90;35;50" dur="0.65s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="250;280;210;265;250" dur="0.65s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="450" y="240" width="12" height="60" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="60;30;100;45;60" dur="1.05s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="240;270;200;255;240" dur="1.05s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="500" y="255" width="12" height="45" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="45;15;85;30;45" dur="0.8s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="255;285;215;270;255" dur="0.8s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="550" y="245" width="12" height="55" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="55;25;95;40;55" dur="0.9s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="245;275;205;260;245" dur="0.9s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="600" y="260" width="12" height="40" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="40;15;80;30;40" dur="0.75s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="260;285;220;270;260" dur="0.75s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="650" y="245" width="12" height="55" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="55;25;95;40;55" dur="0.85s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="245;275;205;260;245" dur="0.85s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="700" y="235" width="12" height="65" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="65;35;105;50;65" dur="1.0s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="235;265;195;250;235" dur="1.0s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="750" y="250" width="12" height="50" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="50;20;90;35;50" dur="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="250;280;210;265;250" dur="0.7s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="800" y="240" width="12" height="60" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="60;30;100;45;60" dur="0.95s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="240;270;200;255;240" dur="0.95s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="850" y="255" width="12" height="45" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="45;15;85;30;45" dur="0.65s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="255;285;215;270;255" dur="0.65s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="900" y="245" width="12" height="55" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="55;25;95;40;55" dur="1.05s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="245;275;205;260;245" dur="1.05s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="950" y="235" width="12" height="65" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="65;35;105;50;65" dur="0.8s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="235;265;195;250;235" dur="0.8s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="1000" y="250" width="12" height="50" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="50;20;90;35;50" dur="0.75s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="250;280;210;265;250" dur="0.75s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="1050" y="240" width="12" height="60" fill="#ff00ff" filter="url(#glow)">
-      <animate attributeName="height" values="60;30;100;45;60" dur="0.9s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="240;270;200;255;240" dur="0.9s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="1100" y="255" width="12" height="45" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="45;15;85;30;45" dur="0.85s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="255;285;215;270;255" dur="0.85s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="1138" y="245" width="12" height="55" fill="#00ffff" filter="url(#glow)">
-      <animate attributeName="height" values="55;25;95;40;55" dur="1.0s" repeatCount="indefinite"/>
-      <animate attributeName="y" values="245;275;205;260;245" dur="1.0s" repeatCount="indefinite"/>
-    </rect>
-  </g>
+  <!-- Window control dots -->
+  <circle cx="40" cy="37" r="6" fill="#ff5f56"/>
+  <circle cx="60" cy="37" r="6" fill="#ffbd2e"/>
+  <circle cx="80" cy="37" r="6" fill="#27c93f"/>
   
-  <!-- Sparkles -->
-  <g>
-    <circle cx="300" cy="50" r="2" fill="#ffffff" opacity="0">
-      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="900" cy="80" r="2" fill="#ffffff" opacity="0">
-      <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="2;4;2" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1050" cy="220" r="2" fill="#ffffff" opacity="0">
-      <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="2;4;2" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="600" cy="40" r="2" fill="#ffffff" opacity="0">
-      <animate attributeName="opacity" values="0;1;0" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="2;4;2" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <!-- Terminal title -->
+  <text x="600" y="43" font-family="'SF Mono', Menlo, monospace" font-size="12" fill="#8a939e" text-anchor="middle">
+    steven@zeiler: ~
+  </text>
   
-  <!-- Scanline sweep -->
-  <rect x="-100" y="110" width="100" height="80" fill="url(#scanlineGrad)" opacity="0.4">
-    <animate attributeName="x" values="-100;1200" dur="6s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Prompt line -->
+  <text x="40" y="85" class="terminal-text" fill="#8a939e">steven@zeiler</text>
+  <text x="145" y="85" class="terminal-text" fill="#8a939e">:</text>
+  <text x="155" y="85" class="terminal-text" fill="#3d7bd9">~</text>
+  <text x="170" y="85" class="terminal-text" fill="#8a939e">$</text>
+  <text x="185" y="85" class="terminal-text" fill="#f5a524">whoami</text>
   
-  <!-- Main text -->
-  <text x="600" y="130" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="url(#textGradient)" text-anchor="middle" filter="url(#glow)">
+  <!-- Output - Name -->
+  <text x="40" y="130" class="terminal-title" fill="url(#amberGrad)" filter="url(#glow)">
     STEVEN ZEILER
-    <animate attributeName="opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
   </text>
   
-  <!-- Tagline -->
-  <text x="600" y="175" font-family="Arial, sans-serif" font-size="26" fill="#ffffff" text-anchor="middle" opacity="0.9">
-    Deep House Disco × Hyper-Efficient Money
+  <!-- Output - Description line 1 -->
+  <text x="40" y="175" font-family="'JetBrains Mono', Menlo, monospace" font-size="18" fill="#8a939e">
+    <tspan fill="#ff8a00">»</tspan> Building AI agent infrastructure • Hyper-efficient money
   </text>
   
-  <!-- Subtitle -->
-  <text x="600" y="205" font-family="Arial, sans-serif" font-size="17" fill="#00ffff" text-anchor="middle" opacity="0.7">
-    AI agents • ZYLR • Payments since the Ripple days
-    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+  <!-- Output - Description line 2 -->
+  <text x="40" y="200" font-family="'JetBrains Mono', Menlo, monospace" font-size="15" fill="#8a939e">
+    <tspan fill="#ff8a00">»</tspan> Huge AI • Material Samples Art • Payments since the Ripple days
   </text>
+  
+  <!-- Data visualization bars (generic signal processing) -->
+  <text x="40" y="240" font-family="'JetBrains Mono', Menlo, monospace" font-size="14" fill="#ff8a00" opacity="0.6">
+    ▁▃▅▇█▇▅▃▁ <tspan fill="#8a939e">▂▄▆▅▄▂</tspan> ▁▃▅▇█▇▅▃▁ <tspan fill="#8a939e">▂▄▆▅▄▂</tspan> ▁▃▅▇█▇▅▃▁
+  </text>
+  
+  <!-- Data flow indicator -->
+  <text x="40" y="260" font-family="'JetBrains Mono', Menlo, monospace" font-size="12" opacity="0.5">
+    <tspan fill="#ff8a00">│</tspan>
+    <tspan fill="#ff8a00">█</tspan>
+    <tspan fill="#f5a524">█</tspan>
+    <tspan fill="#8a939e">▓</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#ff8a00">│</tspan>
+    <tspan fill="#f5a524">█</tspan>
+    <tspan fill="#ff8a00">█</tspan>
+    <tspan fill="#ff8a00">█</tspan>
+    <tspan fill="#8a939e">▓</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#ff8a00">│</tspan>
+    <tspan fill="#ff8a00">█</tspan>
+    <tspan fill="#8a939e">▓</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#ff8a00">│</tspan>
+    <tspan fill="#f5a524">█</tspan>
+    <tspan fill="#ff8a00">█</tspan>
+    <tspan fill="#f5a524">█</tspan>
+    <tspan fill="#8a939e">▓</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#ff8a00">│</tspan>
+    <tspan fill="#ff8a00">█</tspan>
+    <tspan fill="#8a939e">▓</tspan>
+    <tspan fill="#8a939e">▓</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#8a939e">░</tspan>
+    <tspan fill="#8a939e">... data flow</tspan>
+  </text>
+  
+  <!-- Blinking cursor -->
+  <rect x="690" y="118" width="14" height="20" fill="#ff8a00" class="cursor-blink"/>
 </svg>
