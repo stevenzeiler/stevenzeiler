@@ -56,7 +56,7 @@
   
   <!-- Prompt line (single text element with tspan colors) -->
   <text x="40" y="85" class="terminal-text-light">
-    <tspan fill="#2b3038">steven@zeiler</tspan><tspan fill="#2b3038">:</tspan><tspan fill="#3d7bd9">~</tspan><tspan fill="#2b3038">$</tspan><tspan fill="#f5a524"> whoami</tspan>
+    <tspan fill="#2b3038">steven@zeiler</tspan><tspan fill="#2b3038">:</tspan><tspan fill="#3d7bd9">~</tspan><tspan fill="#2b3038">$</tspan><tspan fill="#f5a524">&#160;whoami</tspan>
   </text>
   
   <!-- Output - Name (moved down with clear spacing) -->
