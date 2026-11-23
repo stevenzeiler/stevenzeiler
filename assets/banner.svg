@@ -71,7 +71,7 @@
   
   <!-- Output - Description line 2 -->
   <text x="40" y="220" font-family="'JetBrains Mono', Menlo, monospace" font-size="15" fill="#8a939e">
-    <tspan fill="#ff8a00">»</tspan> Huge AI • Material Samples Art • Payments since the Ripple days
+    <tspan fill="#ff8a00">»</tspan> Full-stack • Payments • Agents • Open source
   </text>
   
   <!-- New prompt line with blinking cursor -->
