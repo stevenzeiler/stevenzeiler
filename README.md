@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/banner.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/banner-dark.svg">
   <img alt="Steven Zeiler - Building AI agent infrastructure • Hyper-efficient money" src="./assets/banner.svg" width="100%">
 </picture>
 
