@@ -1,0 +1,176 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient definitions -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0033;stop-opacity:1">
+        <animate attributeName="stop-color" values="#1a0033;#2d0052;#1a0033" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#4a0080;stop-opacity:1">
+        <animate attributeName="stop-color" values="#4a0080;#6600cc;#4a0080" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#0d001a;stop-opacity:1">
+        <animate attributeName="stop-color" values="#0d001a;#1a0033;#0d001a" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1">
+        <animate attributeName="stop-color" values="#ff00ff;#00ffff;#ff00ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:1">
+        <animate attributeName="stop-color" values="#00ffff;#ff00ff;#00ffff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1">
+        <animate attributeName="stop-color" values="#ff00ff;#00ffff;#ff00ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:0"/>
+    </radialGradient>
+    
+    <!-- Filter for glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Circuit lines (AI/tech theme) -->
+  <g opacity="0.3" stroke="#00ffff" stroke-width="1" fill="none">
+    <path d="M 0,150 L 200,150">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 200,150 L 200,100 L 350,100">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="0.3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 350,100 L 500,100">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 500,100 L 500,200 L 700,200">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="0.9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 700,200 L 850,200">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 850,200 L 850,150 L 1200,150">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- Circuit nodes -->
+    <circle cx="200" cy="150" r="3" fill="#00ffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="100" r="3" fill="#00ffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="100" r="3" fill="#00ffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="200" r="3" fill="#00ffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="850" cy="200" r="3" fill="#00ffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Equalizer bars (disco/music theme) -->
+  <g opacity="0.5">
+    <rect x="80" y="260" width="8" height="40" fill="#ff00ff" filter="url(#glow)">
+      <animate attributeName="height" values="40;10;80;25;40" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="260;290;220;275;260" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="92" y="240" width="8" height="60" fill="#ff00ff" filter="url(#glow)">
+      <animate attributeName="height" values="60;30;100;45;60" dur="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="240;270;200;255;240" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="104" y="250" width="8" height="50" fill="#ff00ff" filter="url(#glow)">
+      <animate attributeName="height" values="50;20;90;35;50" dur="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="250;280;210;265;250" dur="0.7s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="116" y="230" width="8" height="70" fill="#ff00ff" filter="url(#glow)">
+      <animate attributeName="height" values="70;40;110;55;70" dur="1.0s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="230;260;190;245;230" dur="1.0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="128" y="255" width="8" height="45" fill="#ff00ff" filter="url(#glow)">
+      <animate attributeName="height" values="45;15;85;30;45" dur="0.85s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="255;285;215;270;255" dur="0.85s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Right side bars -->
+    <rect x="1064" y="260" width="8" height="40" fill="#00ffff" filter="url(#glow)">
+      <animate attributeName="height" values="40;10;80;25;40" dur="0.75s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="260;290;220;275;260" dur="0.75s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1076" y="240" width="8" height="60" fill="#00ffff" filter="url(#glow)">
+      <animate attributeName="height" values="60;30;100;45;60" dur="0.95s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="240;270;200;255;240" dur="0.95s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1088" y="250" width="8" height="50" fill="#00ffff" filter="url(#glow)">
+      <animate attributeName="height" values="50;20;90;35;50" dur="0.65s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="250;280;210;265;250" dur="0.65s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1100" y="230" width="8" height="70" fill="#00ffff" filter="url(#glow)">
+      <animate attributeName="height" values="70;40;110;55;70" dur="1.05s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="230;260;190;245;230" dur="1.05s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1112" y="255" width="8" height="45" fill="#00ffff" filter="url(#glow)">
+      <animate attributeName="height" values="45;15;85;30;45" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="255;285;215;270;255" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Mirror ball sparkles -->
+  <g>
+    <circle cx="150" cy="80" r="2" fill="#ffffff" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="220" r="2" fill="#ffffff" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="50" r="2" fill="#ffffff" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="80" r="2" fill="#ffffff" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="40" r="2" fill="#ffffff" opacity="0">
+      <animate attributeName="opacity" values="0;1;0" dur="1.6s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="1.6s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Main text -->
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="url(#textGradient)" text-anchor="middle" filter="url(#glow)">
+    STEVEN ZEILER
+    <animate attributeName="opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Deep House Disco × Hyper-Efficient Money
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="210" font-family="Arial, sans-serif" font-size="18" fill="#00ffff" text-anchor="middle" opacity="0.7">
+    Building AI Agent Infrastructure • DJ/Producer as ZYLR • Fintech Pioneer
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+  </text>
+</svg>
