@@ -36,19 +36,26 @@ Building systems that let agents ship for me.
 
 ```bash
 2012  fiat: currency weight in gold & silver
-2013  bitcoin-twitter-escrow: send coins via tweet
-2014  ripple-gatewayd: gateway plugins & offline signing
-2015  stripe-alipay-bridge: payment rail on Ripple
-2016  anypay: crypto payment acceptance
-2018  boost-pow-miner: Bitcoin Cash proof-of-work
-2019  mlb-oracle: signs game results on-chain
-2020  jukebox: pay-to-queue with crypto
-2022  yellow-network: state-channel SDK
-2023  namecheap-cli: DNS automation (13⭐, most-starred)
-2024  actorsystem-ts: actor-model framework
-2024  rabbi: real-time server template
+2013  sendthembitcoins: Bitcoin escrow, send coins via Twitter
+2014  blockchain-gatewayd-plugin: dogecoin integration with Ripple gatewayd
+2014  hong-bao: Stripe to Alipay bridge on Ripple
+2015  ripple-offline: offline transaction signing
+2016  namecheap-cli: DNS automation (13⭐)
+2018  anypay: crypto payments at Anypay
+2018  actorsystem-ts: actor-model framework
+2019  SportsOracle: signs MLB game results on-chain
+2019  metadisco: pay-to-queue jukebox (private)
+2021  boostminer: Boost proof-of-work miner
+2021  rabbi-go: real-time server template (private)
+2022  boostpow-js: Boost POW library
+2023  personal-interests-rabbi: Rabbi template
+2023  rabbi_rust: Rabbi in Rust
+2025  yellow-ts: Yellow Network state-channel SDK
 2026  zenlens: on-device AI search (iOS)
-2026  material-samples-art: vision ML scanner
+2026  pillstation.app: native Apple app
+2026  zensit: native Apple app
+2026  sample-scanner + sample-board-mac: Material Samples Art
+2026  github-audit: audit tooling
 2026  huge-ai: AI agent infrastructure
 ```
 
@@ -67,7 +74,7 @@ frameworks:
 systems:
   2014-2015: Ripple payment infrastructure
   2016-2021: Crypto payments (Anypay, Bitcoin Cash)
-  2022-2023: State channels (Yellow Network)
+  2022-2025: State channels (Yellow Network)
   2026: AI agents + native Apple apps
 
 tooling:
@@ -89,7 +96,7 @@ stats:
 drwxr-xr-x  huge-ai/              # AI agent infrastructure
 drwxr-xr-x  material-samples-art/ # iOS vision ML + macOS SwiftUI
 drwxr-xr-x  zenlens/               # On-device AI search (iOS)
-drwxr-xr-x  pill-station/          # Native Apple app
+drwxr-xr-x  pillstation.app/       # Native Apple app
 drwxr-xr-x  zensit/                # Native Apple app
 ```
 
@@ -103,18 +110,19 @@ drwxr-xr-x  zensit/                # Native Apple app
 ## `> ls ./projects/shipped`
 
 ```bash
-drwxr-xr-x  ripple-gatewayd/      # Gateway infrastructure (2014-15)
-drwxr-xr-x  anypay/                # Crypto payment systems (2016+)
-drwxr-xr-x  yellow-network/        # State-channel SDK (2022)
+drwxr-xr-x  ripple-era/            # Gatewayd plugins, offline signing (2014-15)
+drwxr-xr-x  anypay/                # Crypto payment systems (2018+)
+drwxr-xr-x  yellow-network/        # State-channel SDK (2025)
 drwxr-xr-x  namecheap-cli/         # DNS automation (13⭐)
 drwxr-xr-x  boostminer/            # Bitcoin Cash POW (3⭐)
 ```
 
-**Ripple gatewayd** — Built gateway plugins, offline signing, Stripe-Alipay bridge (2014-15)  
+**Ripple era (2014-15)** — Built gatewayd at Ripple: [blockchain-gatewayd-plugin](https://github.com/stevenzeiler/blockchain-gatewayd-plugin), [hong-bao](https://github.com/stevenzeiler/hong-bao) (Stripe-Alipay bridge), [ripple-offline](https://github.com/stevenzeiler/ripple-offline) signing  
 **[namecheap-cli](https://github.com/stevenzeiler/namecheap-cli)** — Command-line interface to Namecheap API (13 ⭐, most-starred)  
-**Anypay** — Crypto payment acceptance infrastructure (2016+)  
-**[boostminer](https://github.com/stevenzeiler/boostminer)** — Bitcoin Cash proof-of-work miners (3 ⭐)  
-**Yellow Network** — State-channel SDK (2022)
+**Anypay (2018+)** — Crypto payments at Anypay  
+**[boostminer](https://github.com/stevenzeiler/boostminer)** — Bitcoin Cash proof-of-work miner (3 ⭐)  
+**[yellow-ts](https://github.com/stevenzeiler/yellow-ts)** — Yellow Network state-channel SDK (2025)  
+**[SportsOracle](https://github.com/stevenzeiler/SportsOracle)** — Signs MLB game results on-chain (2019)
 
 ---
 
@@ -163,10 +171,10 @@ drwxr-xr-x  boostminer/            # Bitcoin Cash POW (3⭐)
 <div align="center">
 
 [![namecheap-cli](https://github-readme-stats.vercel.app/api/pin/?username=stevenzeiler&repo=namecheap-cli&theme=dark&hide_border=true&bg_color=0d1117&title_color=ff8a00&icon_color=f5a524&text_color=8a939e)](https://github.com/stevenzeiler/namecheap-cli)
-[![Connecting Crypto Currencies](https://github-readme-stats.vercel.app/api/pin/?username=stevenzeiler&repo=connecting-crypto-currencies&theme=dark&hide_border=true&bg_color=0d1117&title_color=ff8a00&icon_color=f5a524&text_color=8a939e)](https://github.com/stevenzeiler/connecting-crypto-currencies)
+[![fiat](https://github-readme-stats.vercel.app/api/pin/?username=stevenzeiler&repo=fiat&theme=dark&hide_border=true&bg_color=0d1117&title_color=ff8a00&icon_color=f5a524&text_color=8a939e)](https://github.com/stevenzeiler/fiat)
 
 [![boostminer](https://github-readme-stats.vercel.app/api/pin/?username=stevenzeiler&repo=boostminer&theme=dark&hide_border=true&bg_color=0d1117&title_color=ff8a00&icon_color=f5a524&text_color=8a939e)](https://github.com/stevenzeiler/boostminer)
-[![Blockchain Gatewayd Plugin](https://github-readme-stats.vercel.app/api/pin/?username=stevenzeiler&repo=blockchain-gatewayd-plugin&theme=dark&hide_border=true&bg_color=0d1117&title_color=ff8a00&icon_color=f5a524&text_color=8a939e)](https://github.com/stevenzeiler/blockchain-gatewayd-plugin)
+[![yellow-ts](https://github-readme-stats.vercel.app/api/pin/?username=stevenzeiler&repo=yellow-ts&theme=dark&hide_border=true&bg_color=0d1117&title_color=ff8a00&icon_color=f5a524&text_color=8a939e)](https://github.com/stevenzeiler/yellow-ts)
 
 </div>
 

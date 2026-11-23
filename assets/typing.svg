@@ -17,19 +17,19 @@
   
   <!-- Phase 1: Building agents -->
   <text x="25" y="25" class="typing-cmd" fill="#f5a524" opacity="0">
-    ./build --agents huge-ai
+    ./build --agents huge-ai --prod
     <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;0.02;0.30;0.33;0.35" dur="15s" repeatCount="indefinite"/>
   </text>
   
   <!-- Phase 2: Scanning materials -->
   <text x="25" y="25" class="typing-cmd" fill="#f5a524" opacity="0">
-    scan ./material-samples --ml-vision
+    scan ./material-samples --ml-vision --batch
     <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.35;0.37;0.63;0.66;0.68" dur="15s" repeatCount="indefinite"/>
   </text>
   
   <!-- Phase 3: Git log -->
   <text x="25" y="25" class="typing-cmd" fill="#f5a524" opacity="0">
-    git log --since=2014 ripple/gatewayd
+    git log --since=2012 --author=stevenzeiler
     <animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.68;0.70;0.98;1;1" dur="15s" repeatCount="indefinite"/>
   </text>
   
@@ -38,7 +38,7 @@
     <tspan fill="#ff8a00">█</tspan>
     <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.02;0.98;1" dur="15s" repeatCount="indefinite"/>
     <animate attributeName="x" 
-      values="27;215;27;295;27;295;27" 
+      values="27;245;27;315;27;295;27" 
       keyTimes="0;0.33;0.35;0.66;0.68;0.98;1" 
       dur="15s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.9;0" dur="1s" repeatCount="indefinite"/>
