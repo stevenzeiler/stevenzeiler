@@ -64,7 +64,7 @@ Building systems that let agents ship for me.
 ```yaml
 languages:
   primary: [TypeScript, Swift]
-  production: [Go, Elixir, Rust, C++]
+  also: [Go, Elixir, Rust, C++]
   history: [Ruby, Node.js, JavaScript]
 
 frameworks:
@@ -73,8 +73,8 @@ frameworks:
   
 systems:
   2014-2015: Ripple payment infrastructure
-  2016-2021: Crypto payments (Anypay, Bitcoin Cash)
-  2022-2025: State channels (Yellow Network)
+  2018-2022: Crypto payments (Anypay, Bitcoin Cash/SV, Boost PoW)
+  2025: State channels (Yellow Network)
   2026: AI agents + native Apple apps
 
 tooling:

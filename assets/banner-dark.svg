@@ -54,20 +54,15 @@
     steven@zeiler: ~
   </text>
   
-  <!-- Prompt line -->
-  <text x="40" y="85" class="terminal-text-light" fill="#2b3038">steven@zeiler</text>
-  <text x="145" y="85" class="terminal-text-light" fill="#2b3038">:</text>
-  <text x="155" y="85" class="terminal-text-light" fill="#3d7bd9">~</text>
-  <text x="170" y="85" class="terminal-text-light" fill="#2b3038">$</text>
-  <text x="185" y="85" class="terminal-text-light" fill="#f5a524">whoami</text>
+  <!-- Prompt line (single text element with tspan colors) -->
+  <text x="40" y="85" class="terminal-text-light">
+    <tspan fill="#2b3038">steven@zeiler</tspan><tspan fill="#2b3038">:</tspan><tspan fill="#3d7bd9">~</tspan><tspan fill="#2b3038">$</tspan><tspan fill="#f5a524"> whoami</tspan>
+  </text>
   
   <!-- Output - Name (moved down with clear spacing) -->
   <text x="40" y="150" class="terminal-title-light" fill="url(#amberGradLight)" filter="url(#glowLight)">
     STEVEN ZEILER
   </text>
-  
-  <!-- Blinking cursor (right after the name) -->
-  <rect x="690" y="118" width="14" height="20" fill="#ff8a00" class="cursor-blink-light"/>
   
   <!-- Output - Description line 1 -->
   <text x="40" y="195" font-family="'JetBrains Mono', Menlo, monospace" font-size="18" fill="#2b3038">
@@ -79,43 +74,13 @@
     <tspan fill="#ff8a00">»</tspan> Huge AI • Material Samples Art • Payments since the Ripple days
   </text>
   
-  <!-- Data visualization bars -->
-  <text x="40" y="260" font-family="'JetBrains Mono', Menlo, monospace" font-size="14" fill="#ff8a00" opacity="0.6">
-    ▁▃▅▇█▇▅▃▁ <tspan fill="#5a5a5a">▂▄▆▅▄▂</tspan> ▁▃▅▇█▇▅▃▁ <tspan fill="#5a5a5a">▂▄▆▅▄▂</tspan> ▁▃▅▇█▇▅▃▁
+  <!-- New prompt line with blinking cursor -->
+  <text x="40" y="250" class="terminal-text-light">
+    <tspan fill="#2b3038">steven@zeiler</tspan><tspan fill="#2b3038">:</tspan><tspan fill="#3d7bd9">~</tspan><tspan fill="#2b3038">$</tspan><tspan fill="#ff8a00" class="cursor-blink-light"> █</tspan>
   </text>
   
-  <!-- Data flow indicator -->
-  <text x="40" y="280" font-family="'JetBrains Mono', Menlo, monospace" font-size="12" opacity="0.5">
-    <tspan fill="#ff8a00">│</tspan>
-    <tspan fill="#ff8a00">█</tspan>
-    <tspan fill="#f5a524">█</tspan>
-    <tspan fill="#5a5a5a">▓</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#ff8a00">│</tspan>
-    <tspan fill="#f5a524">█</tspan>
-    <tspan fill="#ff8a00">█</tspan>
-    <tspan fill="#ff8a00">█</tspan>
-    <tspan fill="#5a5a5a">▓</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#ff8a00">│</tspan>
-    <tspan fill="#ff8a00">█</tspan>
-    <tspan fill="#5a5a5a">▓</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#ff8a00">│</tspan>
-    <tspan fill="#f5a524">█</tspan>
-    <tspan fill="#ff8a00">█</tspan>
-    <tspan fill="#f5a524">█</tspan>
-    <tspan fill="#5a5a5a">▓</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#ff8a00">│</tspan>
-    <tspan fill="#ff8a00">█</tspan>
-    <tspan fill="#5a5a5a">▓</tspan>
-    <tspan fill="#5a5a5a">▓</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#8a939e">░</tspan>
-    <tspan fill="#5a5a5a">... data flow</tspan>
+  <!-- Data visualization bars -->
+  <text x="40" y="275" font-family="'JetBrains Mono', Menlo, monospace" font-size="12" opacity="0.5" fill="#5a5a5a">
+    <tspan fill="#ff8a00">│</tspan><tspan fill="#ff8a00">█</tspan><tspan fill="#f5a524">█</tspan><tspan fill="#5a5a5a">▓░░</tspan><tspan fill="#ff8a00">│</tspan><tspan fill="#f5a524">███</tspan><tspan fill="#5a5a5a">▓░</tspan><tspan fill="#ff8a00">│</tspan><tspan fill="#ff8a00">█</tspan><tspan fill="#5a5a5a">▓░░░</tspan> ... data flow
   </text>
 </svg>
